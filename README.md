@@ -5,6 +5,10 @@
 
 Este projeto é um LinkTree, desenvolvido durante o curso do [Sujeito Programador](https://sujeitoprogramador.com). O objetivo foi criar uma página para centralizar links de maneira moderna, responsiva e acessível, utilizando as melhores práticas em desenvolvimento web.
 
+## Acessar versão online
+
+[LinkeTree](https://linke-tree-phi.vercel.app/)
+
 ## 🚀 Recursos e Tecnologias
 
 - **React**: Biblioteca JavaScript para criar interfaces dinâmicas e componentizadas.
@@ -16,9 +20,22 @@ Este projeto é um LinkTree, desenvolvido durante o curso do [Sujeito Programado
 - **Responsividade**: Design adaptado para dispositivos móveis e desktop.
 - **Deploy**: Projeto hospedado em plataforma
 
-## Acessar versão online
+## 🔥 Integração com Firebase
 
-[LinkeTree](https://linke-tree-phi.vercel.app/)
+Este projeto utiliza o [Firebase](https://firebase.google.com/) para gerenciar os dados em tempo real e oferecer funcionalidades essenciais. Com o Firebase, foi possível implementar as seguintes operações:
+
+- **Banco de Dados em Tempo Real (Firestore)**:
+  - Cadastrar novos links.
+  - Excluir links existentes.
+  - Atualizar links em tempo real para todos os usuários conectados.
+
+- **Autenticação de Usuários (Firebase Auth)**:
+  - Acesso restrito à área administrativa por meio de login.
+
+- **Outras Funcionalidades do Firebase**:
+  - Sincronização rápida e confiável entre o cliente e o servidor.
+  - Armazenamento seguro de dados no Firestore.
+
 
 ## 🌐 Rotas de Acesso
 
