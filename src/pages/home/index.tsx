@@ -1,5 +1,5 @@
 import { Social } from '../../components/Social'
-import { FaFacebook, FaInstagram, FaYoutube} from 'react-icons/fa'
+import { FaFacebook, FaInstagram, FaYoutube } from 'react-icons/fa'
 import { db } from '../../services/firebaseconnection'
 import { getDocs, collection, orderBy, query, doc, getDoc } from 'firebase/firestore'
 import { useEffect, useState } from 'react'

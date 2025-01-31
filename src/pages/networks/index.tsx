@@ -3,6 +3,7 @@ import { Input } from "../../components/input";
 import { FormEvent, useEffect, useState } from "react";
 import { db } from "../../services/firebaseconnection";
 import { setDoc, doc, getDoc } from "firebase/firestore";
+import { toast } from 'react-toastify';
 
 export function Networks(){
 
@@ -39,10 +40,12 @@ export function Networks(){
                 youtube: youtube
             })
 
-            console.log("Cadastrados com sucesso")
+            toast.success("Todos os links foram salvos")
+
 
         } catch(error){
             console.log(`Erro ${error}`)
+            toast.error("O link não foi salvo com sucesso")
         }
 
     }

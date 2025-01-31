@@ -5,6 +5,7 @@ import { FiTrash } from 'react-icons/fi'
 import { addDoc, collection, onSnapshot, query, orderBy,
 doc, deleteDoc } from 'firebase/firestore'
 import { db } from '../../services/firebaseconnection'
+import { toast } from 'react-toastify'
 
 interface LinksProps{
     id: string;
@@ -57,10 +58,6 @@ export function Admin(){
      async function handleRegister(e: FormEvent){
         e.preventDefault();
 
-        if(!nameInput || !urlInput){
-            return alert("Preencha todos os campos")
-        }
-
         try{
             await addDoc(collection(db, "links"), {
                 nome: nameInput,
@@ -70,7 +67,7 @@ export function Admin(){
                 created: new Date(),
             })
 
-            console.log("Cadastrado com sucesso")
+            toast.success("Cadastrado com sucesso!")
             setNameInput('');
             setUrlInput('');
             
@@ -83,6 +80,8 @@ export function Admin(){
     async function handleDeleteLink(id: string){
         const docRef = doc(db, "links", id)
         await deleteDoc(docRef)
+
+        toast.error("Excluido")
     }
 
 

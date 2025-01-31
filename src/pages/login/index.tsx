@@ -4,6 +4,7 @@ import { Link, useNavigate } from 'react-router-dom'
 import { Input } from '../../components/input'
 import { auth } from '../../services/firebaseconnection'
 import { signInWithEmailAndPassword } from 'firebase/auth'
+import { toast } from 'react-toastify'
 
 export function Login(){
 
@@ -22,7 +23,7 @@ export function Login(){
 
         signInWithEmailAndPassword(auth, email, password)
         .then(()=>{
-            console.log("Logado com sucesso")
+            toast.success("Logado com sucesso")
             navigate("/admin", {replace: true})
         })
         .catch((error)=>{
