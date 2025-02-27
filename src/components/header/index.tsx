@@ -1,11 +1,11 @@
 import { BiLogOut } from 'react-icons/bi'
 import { Link } from 'react-router-dom'
 import { auth } from '../../services/firebaseconnection'
-import { signOut} from 'firebase/auth'
+import { signOut } from 'firebase/auth'
 
-export function Header(){
+export function Header() {
 
-    async function handleLogout(){
+    async function handleLogout() {
         await signOut(auth);
     }
 
@@ -19,7 +19,7 @@ export function Header(){
                 </div>
 
                 <button onClick={handleLogout}>
-                    <BiLogOut size={28} color="#db2629"/>
+                    <BiLogOut size={28} color="#db2629" />
                 </button>
             </nav>
         </header>

@@ -4,45 +4,45 @@ import { onAuthStateChanged } from 'firebase/auth'
 import { Navigate } from 'react-router-dom'
 
 
-interface PrivateProps{
+interface PrivateProps {
     children: ReactNode;
 }
 
-export function Private({ children }: PrivateProps): any{
-    
+export function Private({ children }: PrivateProps): any {  //eslint-disable-line
+
     const [loading, setLoading] = useState(true);
     const [signed, setSigned] = useState(false);
 
-    useEffect(()=>{
-        const unsub = onAuthStateChanged(auth, (user)=>{
-            if(user){
+    useEffect(() => {
+        const unsub = onAuthStateChanged(auth, (user) => {
+            if (user) {
                 const userData = {
                     uid: user?.uid,
                     email: user?.email
                 }
-                
+
                 localStorage.setItem("@reactLinks", JSON.stringify(userData))
                 setLoading(false);
                 setSigned(true);
 
-            }else{
+            } else {
                 setLoading(false);
                 setSigned(false);
             }
         })
 
-        return ()=>{
+        return () => {
             unsub();
         }
 
     }, [])
 
-    if(loading){
+    if (loading) {
         return <></>
     }
 
-    if(!signed){
-        return <Navigate to ="/login"/>
+    if (!signed) {
+        return <Navigate to="/login" />
     }
 
     return children;

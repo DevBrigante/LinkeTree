@@ -1,16 +1,16 @@
 import { ReactNode } from 'react'
 
-interface SocialProps{
+interface SocialProps {
     url: string;
     children: ReactNode
 }
 
-export function Social({ url, children }: SocialProps){
-    return(
+export function Social({ url, children }: SocialProps) {
+    return (
         <a href={url}
-        rel="noopener noreferrer"
-        target="_blank"
-        
+            rel="noopener noreferrer"
+            target="_blank"
+
         >{children}</a>
     )
 }

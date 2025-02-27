@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 
-export function ErrorPage(){
-    return(
+export function ErrorPage() {
+    return (
         <div className="flex w-full justify-center items-center flex-col text-white min-h-screen">
             <h1 className="font-medium text-6xl mb-2">404</h1>
             <h1 className="font-medium text-4xl mb-4">Página não encontrada</h1>
